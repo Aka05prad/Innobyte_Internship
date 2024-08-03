@@ -1,0 +1,421 @@
+/* body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #282c34;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+} */
+ .navbar-brand{
+    font-family: Bahnschrift SemiBold;
+ }
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 0.1s ease-out;
+}
+.hero-section {
+    background-image: url('https://picsum.photos/1600/900?random=night');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: Segoe Print;
+    font-size: 29px;
+    color: black;
+}
+.typewriter h1::after {
+    content: '|';
+    position: absolute;
+    right: 1;
+    animation: blink 1s step-end infinite;
+    color: black;
+}
+@keyframes blink {
+    from, to {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+.bg-cover {
+    background-image: url('https://picsum.photos/1600/900?random=hotel');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.booking-form {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.highlight {
+    color: #FFA500;
+}
+
+.about-us-section {
+    /* background-image: url('https://picsum.photos/1600/900?random=building'); */
+    background-color:black;
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0;
+    color: white;
+    position: relative;
+}
+
+.about-us-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.about-us-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.about-us-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: perspective(1000px) rotateY(-10deg);
+    transition: transform 0.3s;
+    /* border: 2px solid #ddd; */
+    /* border-radius: 6px; */
+    /* padding: 5px;
+    width: 150px; */
+}
+
+.about-us-image img:hover {
+    transform: perspective(1000px) rotateY(0deg);
+    border: 2px solid #ddd;
+}
+
+.about-us-content {
+    padding: 20px;
+    background-color:#ffffff;
+    border-radius: 10px;
+    color: black;
+    border: 1px solid black;
+    opacity: 0.6;
+}
+.about-us-content h4 {
+    font-family: Century Gothic;
+    font-size: 34px;
+}
+.about-us-content h1{
+    font-family: Arial Black;
+}
+.about-us-content p{
+    font-family: Perpetua;
+    font-size: 21px;
+}
+.about-us-content h6{
+    font-family: Courier New;
+    font-size: 16px;
+    color: blue;
+}
+
+.rooms-section {
+    background-color:black;
+}
+
+.room-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.room-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(237, 234, 236, 0.923);
+}
+
+.room-card img {
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.room-card .card-body {
+    background: black;
+    color:white;
+    border-bottom-left-radius: calc(0.25rem - 1px);
+    border-bottom-right-radius: calc(0.25rem - 1px);
+    text-align: center;
+}
+
+.services-section {
+    background-image: url('https://picsum.photos/1600/900?random=building');
+    padding: 60px 0;
+}
+.ggo {
+    /* margin: 30px; */
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.6;
+  margin-left: 700px;
+  height: 580px;
+  width: 400px;
+}
+
+.services-title {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #240625;
+    font-family:Courier New ;
+}
+
+.services-list {
+    list-style: none;
+    padding: 0;
+}
+.services-list pre{
+    color:rgba(38, 5, 42, 0.866);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.service-item {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: Lucida Handwriting;
+}
+
+.service-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.service-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.service-item-content {
+    display: flex;
+    align-items: center;
+}
+
+.service-item-content span {
+    margin-left: 10px;
+}
+@media (min-width: 768px) {
+    .services-section .container {
+        display: flex;
+        align-items: center;
+    }
+
+    .services-section .col-md-6:first-child {
+        flex: 1;
+    }
+
+    .services-section .col-md-6:last-child {
+        flex: 1;
+        margin-left: -50px; /* Adjust this value to shift the content */
+    }
+}
+
+.feedback-section {
+    background-color:black;
+    padding: 60px 0;
+}
+
+.contact-info {
+    background-color: rgb(82, 8, 82);
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #ffffff;
+}
+.contact-info p{
+    font-family: papyrus;
+}
+
+.contact-info:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(218, 192, 217, 0.844);
+}
+
+#feedback-form {
+    background-color: #39153a90;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.feedback-section h4 {
+    margin-bottom: 20px;
+}
+
+.feedback-section .form-label {
+    margin-bottom: 5px;
+}
+
+.feedback-section .form-control {
+    margin-bottom: 10px;
+}
+
+.feedback-section .btn-primary {
+    width: 100%;
+    display: block;
+}
+
+/* /Gallery/ */
+
+
+.about-section {
+    /* background-color: #ffffff; */
+    color: beige;
+    padding: 60px 0;
+}
+.about-section h2{
+    font-family: Arial Black;
+}
+.about-section p{
+    font-family: Book Antiqua;
+}
+.gallery-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+    border-radius: 8px;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.overlay-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Increase opacity for better contrast */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.overlay-content-1 {
+    text-align: center;
+    color: #ffffff; /* Ensure text is white */
+}
+
+.gallery-item:hover .overlay-1 {
+    opacity: 1;
+}
+
+.contact-section {
+    /* background-color: #ffffff; */
+    color: beige;
+    padding: 60px 0;
+}
+.contact-section h2{
+    font-family: Arial Black;
+}
+.contact-section p{
+    font-family: Courier;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+p.lead {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* /floating box/ */
+#floatingBox{
+    background-color: rgba(42, 5, 41, 0.888);
+}
+.floating-box {
+    position: relative;
+    margin: 100px auto;
+    width: 1200px;
+    padding: 20px;
+    /* background-color: white; */
+    color: beige;
+    box-shadow: 0 4px 8px rgba(46, 2, 56, 0.83);
+    text-align: center;
+    border-radius: 8px;
+    opacity: 0; /* Start hidden */
+    transform: translateY(50px); /* Start slightly below */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.floating-box.show {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+}
+/*/carousels/ */
+  .drop {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    font-family: Gabriola;
+    font-size: 55.5px;
+    color: beige;
+} 
+
+
+.carousel-item.active .drop {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.social-icon{
+    width: 30px;
+    height: 30px;
+}
